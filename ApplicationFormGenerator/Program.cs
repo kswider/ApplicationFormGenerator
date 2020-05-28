@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ApplicationFormGenerator
 {
     class Program
     {
-        const int defaultNumberOfDocs = 10;
+        const string OutputDirectory = "GeneratedDocs";
 
         static void Main(string[] args)
         {
@@ -20,13 +21,15 @@ namespace ApplicationFormGenerator
             bool shouldCreatePositiveCases = int.Parse(Console.ReadLine()) == 1;
 
             var generator = GeneratorFactory.CreateGenerator(documentType);
-            Directory.Delete("GeneratedDocs", true);
-            Directory.CreateDirectory("GeneratedDocs");
-            for (int i = 0; i < numberOfDocsToGenerate; i++)
+            if (Directory.Exists(OutputDirectory))
+                Directory.Delete(OutputDirectory, true);
+
+            Directory.CreateDirectory(OutputDirectory);
+            Parallel.For(0, numberOfDocsToGenerate, i =>
             {
                 var text = generator.Generate(shouldCreatePositiveCases);
-                File.WriteAllText($@"GeneratedDocs/doc_{i}", text);
-            }
+                File.WriteAllText($@"{OutputDirectory}/doc_{i}", text);
+            });
             Console.WriteLine("Files generated successfully!");
         }
     }
