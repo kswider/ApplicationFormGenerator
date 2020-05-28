@@ -1,8 +1,17 @@
-﻿namespace ApplicationFormGenerator
+﻿using System;
+using System.IO;
+
+namespace ApplicationFormGenerator
 {
-    interface IToken
+    class Token
     {
         public string BareRepresentation { get; }
-        public string GeneratedValue { get; }
+        public string Value { get; }
+
+        public Token(string bareRepresentation, string generatedValue)
+        {
+            BareRepresentation = bareRepresentation;
+            Value = generatedValue;
+        }
     }
 }

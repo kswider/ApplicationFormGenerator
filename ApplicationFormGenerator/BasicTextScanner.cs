@@ -9,13 +9,24 @@ namespace ApplicationFormGenerator
         const string Prefix = "__";
         const string PostFix = "__";
 
-        public IEnumerable<Token> ScanForTokens(string text)
+        bool _shouldCreatePositiveCases;
+
+        public BasicTextScanner(bool shouldCreatePositiveCases)
+        {
+            _shouldCreatePositiveCases = shouldCreatePositiveCases;
+        }
+
+        public IEnumerable<Token> ScanAndGenerateTokens(string text)
         {
             foreach (var word in text.Split())
             {
                 if (word.StartsWith(Prefix) && word.EndsWith(PostFix))
                 {
-                    yield return TokenFactory.Generate(word);
+                    var textToken = word[2..^2];
+                    var valueFactory = ValueFactory.Instatnce;
+                    valueFactory.ShouldGeneratePositiveTokens = _shouldCreatePositiveCases;
+                    var value = valueFactory.Generate(textToken);
+                    yield return new Token(word, value);
                 }
             }
         }

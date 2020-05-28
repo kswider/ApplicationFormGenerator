@@ -2,6 +2,6 @@
 {
     interface IGenerator
     {
-        string Generate();
+        string Generate(bool shouldCreatePositiveCases);
     }
 }

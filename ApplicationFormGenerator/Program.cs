@@ -9,20 +9,22 @@ namespace ApplicationFormGenerator
 
         static void Main(string[] args)
         {
-            var generator = new ECTSDeficitFormGenerator();
-            int numberOfDocsToGenerate;
-            if (args.Length < 1)
-            {
-                Console.WriteLine($"Setting number of docs to create to {defaultNumberOfDocs} because parameter wasn't passed");
-                numberOfDocsToGenerate = defaultNumberOfDocs;
-            }
-            else
-                numberOfDocsToGenerate = int.Parse(args[0]);
+            Console.WriteLine($"Provide number of documents to generate:");
+            var numberOfDocsToGenerate = int.Parse(Console.ReadLine());
 
+            Console.WriteLine($"Provide type of documents to generate:");
+            Console.WriteLine($"1 - ECTS deficit");
+            var documentType = (DocumentType)int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Provide staus of generated docs: 1 - Positive Cases, 2 - Negative Cases");
+            bool shouldCreatePositiveCases = int.Parse(Console.ReadLine()) == 1;
+
+            var generator = GeneratorFactory.CreateGenerator(documentType);
+            Directory.Delete("GeneratedDocs", true);
             Directory.CreateDirectory("GeneratedDocs");
             for (int i = 0; i < numberOfDocsToGenerate; i++)
             {
-                var text = generator.Generate();
+                var text = generator.Generate(shouldCreatePositiveCases);
                 File.WriteAllText($@"GeneratedDocs/doc_{i}", text);
             }
             Console.WriteLine("Files generated successfully!");
