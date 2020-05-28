@@ -8,12 +8,14 @@ namespace ApplicationFormGenerator
 {
     internal class ValueFactory
     {
-        private static List<string> _names;
-        private static List<string> _surnames;
-        private static List<string> _degrees;
-        private static List<string> _courses;
+        private List<string> _names;
+        private List<string> _surnames;
+        private List<string> _degrees;
+        private List<string> _courses;
 
-        private static Random _random = new Random();
+        private Dictionary<string, string> _generatedValues = new Dictionary<string, string>();
+
+        private  Random _random = new Random();
         
         private static ValueFactory _instance;
         public static ValueFactory Instatnce
@@ -38,16 +40,20 @@ namespace ApplicationFormGenerator
 
         public string Generate(string stringToken)
         {
-            if (stringToken.Contains('/'))
+            if (CheckIfDecisiveToken(stringToken))
             {
                 var positiveAndNegativeToken = stringToken.Split('/');
                 stringToken = ShouldGeneratePositiveTokens ? positiveAndNegativeToken[0] : positiveAndNegativeToken[1];
             }
 
-            return stringToken switch
+            var isConstToken = CheckIfConstToken(stringToken);
+            if (isConstToken && _generatedValues.ContainsKey(stringToken))
+                return _generatedValues[stringToken];
+
+            var generatedValue = stringToken switch
             {
-                string word when word.Equals("NAME") => GenerateName(word),
-                string word when word.Equals("SURNAME") => GenerateSurname(word),
+                string word when word.Contains("SURNAME") => GenerateSurname(word),
+                string word when word.Contains("NAME") => GenerateName(word),                
                 string word when word.Contains("NUMBERS") => GenerateNumbers(word),
                 string word when word.Contains("NUMBER_RANGE") => GenerateNumberFromRange(word),
                 string word when word.Contains("DATE") => GenerateDate(word),
@@ -55,15 +61,20 @@ namespace ApplicationFormGenerator
                 string word when word.Contains("COURSE") => GenerateCourse(word),
                 _ => "?"
             };
+
+            if (isConstToken)
+                _generatedValues[stringToken] = generatedValue;
+
+            return generatedValue;
         }
 
-        private string GenerateName(string stringToken)
-            => _names[_random.Next(_names.Count)];
+        private bool CheckIfConstToken(string stringToken) => stringToken.StartsWith('C');
 
+        private bool CheckIfDecisiveToken(string stringToken) => stringToken.Contains('/');
 
-        private string GenerateSurname(string stringToken)
-            => _surnames[_random.Next(_surnames.Count)];
+        private string GenerateName(string stringToken) => _names[_random.Next(_names.Count)];
 
+        private string GenerateSurname(string stringToken) => _surnames[_random.Next(_surnames.Count)];
 
         private string GenerateNumbers(string stringToken)
         {
@@ -73,8 +84,7 @@ namespace ApplicationFormGenerator
             return new string(Enumerable.Repeat(numbers, length).Select(x => x[_random.Next(numbers.Length)]).ToArray());
         }
 
-        private string GenerateDate(string stringToken)
-            => DateTime.Now.AddDays(-_random.Next(30)).ToShortDateString();
+        private string GenerateDate(string stringToken) => DateTime.Now.AddDays(-_random.Next(30)).ToShortDateString();
 
 
         private string GenerateNumberFromRange(string stringToken)
@@ -86,10 +96,8 @@ namespace ApplicationFormGenerator
             return _random.Next(lowerBound, upperBound).ToString();
         }
 
-        private string GenerateDegree(string stringToken)
-            => _degrees[_random.Next(_degrees.Count)];
+        private string GenerateDegree(string stringToken) => _degrees[_random.Next(_degrees.Count)];
 
-        private string GenerateCourse(string stringToken)
-            => _courses[_random.Next(_courses.Count)];
+        private string GenerateCourse(string stringToken) => _courses[_random.Next(_courses.Count)];
     }
 }

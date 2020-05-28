@@ -1,4 +1,4 @@
-__NAME__ __SURNAME__ 					Kraków, dn. __DATE__
+__C_NAME_1__ __C_SURNAME_1__ 					Kraków, dn. __DATE__
 
 Imię i nazwisko 
 
@@ -10,7 +10,7 @@ __NUMBER_RANGE_1_5__
 
 Rok studiów 
 
-__DEGREE__
+__C_DEGREE__
 
 Kierunek
 
@@ -22,7 +22,7 @@ Kierunek
 
 
 
-       __NAME__ __SURNAME__
+       __NAME_2__ __SURNAME_2__
 
 
 
@@ -32,17 +32,17 @@ dotyczy: zgody na kontynuowanie studiów z deficytem punktów ECTS
 
 Zwracam się z prośbą o wyrażenie zgody na kontynuowanie studiów z deficytem punktów ECTS w semestrze __NUMBER_RANGE_1_7__ z powodu braku zaliczenia następujących przedmiotów:
 
-			Nazwa przedmiotu __COURSE__
+			Nazwa przedmiotu __C_COURSE__
 
-			Liczba godzin __NUMBER_RANGE_5_30__
+			Liczba godzin __C_NUMBER_RANGE_5_30__
 
-			Liczba pkt. ECTS __NUMBER_RANGE_1_9/NUMBER_RANGE_9_25__
+			Liczba pkt. ECTS __C_NUMBER_RANGE_1_16/C_NUMBER_RANGE_16_30__
 
 			Kwota opłaty __NUMBER_RANGE_100_1000__
 
 			Termin zaliczenia __DATE__
 
-			Potwierdzenie zgody __NAME__ __SURNAME__
+			Potwierdzenie zgody __C_NAME_1__ __C_SURNAME_1__ 	
 
 			
 
@@ -97,15 +97,15 @@ Zwracam się z prośbą o wyrażenie zgody na kontynuowanie studiów z deficytem
 Zwracam się z prośbą o wyrażenie zgody na powtarzanie następujących przedmiotów 
 w bieżącym semestrze:
 
-			Nazwa przedmiotu __COURSE__
+			Nazwa przedmiotu __C_COURSE__
 
-			Liczba godzin __NUMBER_RANGE_5_30__
+			Liczba godzin __C_NUMBER_RANGE_5_30__
 
-			Liczba punktów ECTS __NUMBER_RANGE_1_25__
+			Liczba punktów ECTS __C_NUMBER_RANGE_1_16/C_NUMBER_RANGE_16_30__
 
 			Termin zaliczenia __DATE__
 
-			Potwierdzenie zgody __NAME__ __SURNAME__
+			Potwierdzenie zgody __C_NAME_1__ __C_SURNAME_1__ 	
 
 			
 
@@ -141,7 +141,7 @@ w bieżącym semestrze:
 
 
 
-					         __NAME__ __SURNAME__
+					         __C_NAME_1__ __C_SURNAME_1__ 	
 
 			                czytelny podpis
 
