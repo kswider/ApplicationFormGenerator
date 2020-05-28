@@ -1,4 +1,4 @@
-__C_NAME_1__ __C_SURNAME_1__ 					Kraków, dn. __DATE__
+__C_NAME__ __C_SURNAME__ 					Kraków, dn. __DATE__
 
 Imię i nazwisko 
 
@@ -22,7 +22,7 @@ Kierunek
 
 
 
-       __NAME_2__ __SURNAME_2__
+       __NAME__ __SURNAME__
 
 
 
@@ -42,7 +42,7 @@ Zwracam się z prośbą o wyrażenie zgody na kontynuowanie studiów z deficytem
 
 			Termin zaliczenia __DATE__
 
-			Potwierdzenie zgody __C_NAME_1__ __C_SURNAME_1__ 	
+			Potwierdzenie zgody __C_NAME__ __C_SURNAME__ 	
 
 			
 
@@ -105,7 +105,7 @@ w bieżącym semestrze:
 
 			Termin zaliczenia __DATE__
 
-			Potwierdzenie zgody __C_NAME_1__ __C_SURNAME_1__ 	
+			Potwierdzenie zgody __C_NAME__ __C_SURNAME__ 	
 
 			
 
@@ -141,7 +141,7 @@ w bieżącym semestrze:
 
 
 
-					         __C_NAME_1__ __C_SURNAME_1__ 	
+					         __C_NAME__ __C_SURNAME__ 	
 
 			                czytelny podpis
 
