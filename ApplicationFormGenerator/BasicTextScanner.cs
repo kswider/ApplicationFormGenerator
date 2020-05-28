@@ -18,12 +18,12 @@ namespace ApplicationFormGenerator
 
         public IEnumerable<Token> ScanAndGenerateTokens(string text)
         {
+            var valueFactory = new ValueFactory();
             foreach (var word in text.Split())
             {
                 if (word.StartsWith(Prefix) && word.EndsWith(PostFix))
                 {
-                    var textToken = word[2..^2];
-                    var valueFactory = new ValueFactory();
+                    var textToken = word[2..^2];       
                     valueFactory.ShouldGeneratePositiveTokens = _shouldCreatePositiveCases;
                     var value = valueFactory.Generate(textToken);
                     yield return new Token(word, value);
