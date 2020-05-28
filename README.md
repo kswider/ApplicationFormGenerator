@@ -4,6 +4,8 @@ This project was created to easily generate fake application form files for Mach
 
 It can be easily used for creating any amount of docs using provided schema. Example of schemas can be found in "./Data/Any" and "./Data/ECTSDeficit" directories.
 
+There is an option to save all generated documents single csv file. Such file can easily be used for ML training.
+
 # Creating schema
 
 ## Tokens
@@ -85,3 +87,6 @@ After that open your favourite console, go to the project directory and run "dot
 
 # Using your own schemas
 If you want to use your own schemas, place them in folder "./Data/Any", run the generator and select "Any document" for the document type. Generator will randomly select schema from all schemas in this folder. 
+
+## References
+File generated from this generator were used to teach model to decide if ECTS Deficit application form should pass. You can check that here: https://github.com/kswider/ApplicationFormEvaluator 
