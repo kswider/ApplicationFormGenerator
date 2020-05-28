@@ -12,6 +12,9 @@
     <None Update="Data\ECTSDeficit\ECTS_2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\ECTSDeficit\ECTS_3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 
     <None Update="Data\TokenValues\Degrees">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
