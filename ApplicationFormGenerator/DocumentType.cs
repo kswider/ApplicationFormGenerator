@@ -6,6 +6,7 @@ namespace ApplicationFormGenerator
 {
     enum DocumentType
     {
+        Any = 0,
         ECTSDeficit = 1
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApplicationFormGenerator
+namespace ApplicationFormGenerator.FormGenerators
 {
     static class GeneratorFactory
     {
@@ -10,6 +10,7 @@ namespace ApplicationFormGenerator
         {
             return type switch
             {
+                DocumentType.Any => new AnyFormGenerator(),
                 DocumentType.ECTSDeficit => new ECTSDeficitFormGenerator(),
                 _ => throw new Exception("This document type is not supported!")
             };

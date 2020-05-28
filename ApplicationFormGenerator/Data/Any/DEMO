@@ -1,0 +1,142 @@
+This is schema created to present generator capabilities:
+
+There are 7 types of supported tokens for now:
+			
+NAME        
+SURNAME
+NUMBERS_X
+NUMBER_RANGE_X_Y
+DATE
+DEGREE
+COURSE
+
+To use token in you schema you need to apply double underscore (__) before and after token.
+
+Example of generated values:
+
+Name: __NAME__
+Surname: __SURNAME__
+Sequence of numbers: __NUMBERS_10__
+Number from given range (upper bound exclusive): __NUMBER_RANGE_100_1000__
+Date: __DATE__
+Degree: __DEGREE__
+Course: __COURSE__
+
+Additionally there are two type of token modifiers:
+
+Const modifier
+This modifier should be used for reusing generated token multiple times in on schema. It can be applied by preceeding the token with 'C_'.
+
+Example:
+Generating exactly same name twice: __C_NAME__ __C_NAME__
+
+Note:
+If you need to have more than one const token inside your schema, you can add number after your token:
+
+Example:
+Generating different than previous name, exactly twice: __C_NAME_2__ __C_NAME_2__
+
+
+Decisive modifier
+This modifier should be used for creating schemas for MachineLearning needs. It can be applied by merging two tokens with slash sign (/). 
+The token before slash will be used in positive scenarios. The token after slash will be used in negative scenarios.
+Type of scenarios is chosen after start of the generator.
+
+Example:
+In positive scenario number from range [1;5) will be generated. In negative scenario number from range [5;100) will be generated.
+Generated value: __NUMBER_RANGE_1_5/NUMBER_RANGE_5_100__
+
+
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+Zwracam się z prośbą o wyrażenie zgody na powtarzanie następujących przedmiotów 
+w bieżącym semestrze:
+
+			Nazwa przedmiotu __C_COURSE__
+
+			Liczba godzin __C_NUMBER_RANGE_5_30__
+
+			Liczba punktów ECTS __C_NUMBER_RANGE_1_16/C_NUMBER_RANGE_16_30__
+
+			Termin zaliczenia __DATE__
+
+			Potwierdzenie zgody __C_NAME__ __C_SURNAME__ 	
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+
+
+
+
+					         __C_NAME__ __C_SURNAME__ 	
+
+			                czytelny podpis
+
+
+
+
+
+Termin płatności: __DATE__

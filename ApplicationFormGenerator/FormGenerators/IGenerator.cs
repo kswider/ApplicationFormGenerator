@@ -1,4 +1,4 @@
-﻿namespace ApplicationFormGenerator
+﻿namespace ApplicationFormGenerator.FormGenerators
 {
     interface IGenerator
     {

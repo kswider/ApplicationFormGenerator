@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Data\Any\DEMO">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\ECTSDeficit\ECTS_1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

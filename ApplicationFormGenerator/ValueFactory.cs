@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ApplicationFormGenerator
 {
-    internal class ValueFactory
+    class ValueFactory
     {
         private List<string> _names;
         private List<string> _surnames;

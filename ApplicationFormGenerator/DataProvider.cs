@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ApplicationFormGenerator
 {
-    public static class DataProvider
+    static class DataProvider
     {
         public static List<string> Names { get; }
         public static List<string> Surnames { get; }

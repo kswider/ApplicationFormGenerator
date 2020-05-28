@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationFormGenerator.FormGenerators;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace ApplicationFormGenerator
             var numberOfDocsToGenerate = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"Provide type of documents to generate:");
-            Console.WriteLine($"1 - ECTS deficit");
+            Console.WriteLine($"0 - Any Document, 1 - ECTS deficit");
             var documentType = (DocumentType)int.Parse(Console.ReadLine());
 
             Console.WriteLine($"Provide staus of generated docs: 1 - Positive Cases, 2 - Negative Cases");
