@@ -12,24 +12,7 @@
     <None Update="Data\ECTSDeficit\ECTS_2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Data\ECTSDeficit\ECTS_3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ECTSDeficit\ECTS_4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ECTSDeficit\ECTS_5">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ECTSDeficit\ECTS_6">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ECTSDeficit\ECTS_7">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\ECTSDeficit\ECTS_8">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+
     <None Update="Data\TokenValues\Degrees">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

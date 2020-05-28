@@ -23,7 +23,7 @@ namespace ApplicationFormGenerator
                 if (word.StartsWith(Prefix) && word.EndsWith(PostFix))
                 {
                     var textToken = word[2..^2];
-                    var valueFactory = ValueFactory.Instatnce;
+                    var valueFactory = new ValueFactory();
                     valueFactory.ShouldGeneratePositiveTokens = _shouldCreatePositiveCases;
                     var value = valueFactory.Generate(textToken);
                     yield return new Token(word, value);

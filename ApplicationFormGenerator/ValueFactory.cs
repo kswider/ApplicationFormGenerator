@@ -16,26 +16,16 @@ namespace ApplicationFormGenerator
         private Dictionary<string, string> _generatedValues = new Dictionary<string, string>();
 
         private  Random _random = new Random();
-        
-        private static ValueFactory _instance;
-        public static ValueFactory Instatnce
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new ValueFactory();
-                return _instance;
-            }
-        }
+       
 
         public bool ShouldGeneratePositiveTokens { get; set; }
 
-        private ValueFactory()
+        public  ValueFactory()
         {
-            _names = File.ReadAllLines(@"./Data/TokenValues/Names").ToList();
-            _surnames = File.ReadAllLines(@"./Data/TokenValues/Surnames").ToList();
-            _degrees = File.ReadAllLines(@"./Data/TokenValues/Degrees").ToList();
-            _courses = File.ReadAllLines(@"./Data/TokenValues/Courses").ToList();
+            _names = DataProvider.Names;
+            _surnames = DataProvider.Surnames;
+            _degrees = DataProvider.Degrees;
+            _courses = DataProvider.Degrees;
         }
 
         public string Generate(string stringToken)
@@ -68,7 +58,7 @@ namespace ApplicationFormGenerator
             return generatedValue;
         }
 
-        private bool CheckIfConstToken(string stringToken) => stringToken.StartsWith('C');
+        private bool CheckIfConstToken(string stringToken) => stringToken.StartsWith("C_");
 
         private bool CheckIfDecisiveToken(string stringToken) => stringToken.Contains('/');
 
