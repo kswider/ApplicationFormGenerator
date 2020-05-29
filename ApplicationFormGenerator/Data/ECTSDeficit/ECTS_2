@@ -24,15 +24,15 @@ Biomedycznej
    z przedmiotów :
 
 - semestr zimowy :
-1. __COURSE__ __C_NUMBER_RANGE_5_30__
+1. __COURSE__ __NUMBER_RANGE_5_30__
                    nazwa wydziału, nazwa przedmiotu, rodzaj zajęć  ,  liczba
 godzin,
 
-2. __COURSE__ __C_NUMBER_RANGE_5_30__
+2. __COURSE__ __NUMBER_RANGE_5_30__
                       nazwa  wydziału,  nazwa  przedmiotu,  rodzaj  zajęć  ,
 liczba godzin,
 
-3. __COURSE__ __C_NUMBER_RANGE_5_30__
+3. __COURSE__ __NUMBER_RANGE_5_30__
                       nazwa  wydziału,  nazwa  przedmiotu,  rodzaj  zajęć  ,
 liczba godzin,
 
