@@ -47,8 +47,9 @@ namespace ApplicationFormGenerator
                     var text = generator.Generate(shouldCreatePositiveCases);
                     texts.Add(text);
                 });
-                using (var sw = new StreamWriter($@"{OutputDirectory}/output"))
+                using (var sw = new StreamWriter($@"{OutputDirectory}/output.csv"))
                 {
+                    sw.WriteLine("Result;Text");
                     foreach (var text in texts)
                     {
                         var textSpacesSeparated = Regex.Replace(text, @"\s+", " ");
